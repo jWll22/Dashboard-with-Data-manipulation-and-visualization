@@ -1,4 +1,3 @@
-# Task 1:
 import os
 import io
 import base64
@@ -50,10 +49,6 @@ print("\nShip Mode:", df["Ship Mode"].unique())
 print("\nSegment:", df["Segment"].unique())
 print("\nRegion:", df["Region"].unique())
 print("\nCategory:", df["Category"].unique())
-
-
-# Task 2:
-# 2.1 Missing Value Analysis:
 
 # Calculate the total number of missing values per column
 cal_total_num = df.isnull().sum()
