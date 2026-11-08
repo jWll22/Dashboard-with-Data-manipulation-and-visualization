@@ -986,7 +986,6 @@ def update_trend(selected_regions, selected_categories, start_date, end_date,
 
     return fig
 
-
 '''ENTRY POINT:'''
 if __name__ == "__main__":
     webbrowser.open("http://127.0.0.1:8050/") # opens the dashboard automatically
