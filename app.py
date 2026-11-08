@@ -35,7 +35,7 @@ print("\nLast 5 rows: \n", df.tail(5))
 # Shape of the Columns and Rows:
 print("\nShape of the dataset: \n", df.shape)
 
-# 1.2:
+
 # Display column names, data types, and non-null counts:
 # FIX: df.info is a bound method — must be called with () to print actual output
 print("\nColumn Names | Data Types | Non-Null Counts: \n")
@@ -88,8 +88,6 @@ print("Saved: assets/missing_values.png")
    in conclusion there is no need for dropping or filling values.
    The bar chart above confirms every column has 0 missing values.
 '''
-
-# 2.2  Duplicate Detection
 
 # Check for and count duplicate rows based on ALL columns:
 cnt_dup_rows = df.duplicated().sum()
@@ -218,9 +216,9 @@ plt.savefig("assets/boxplots.png", dpi=150, bbox_inches="tight")
 print("Saved: assets/boxplots.png")
 
 
-# TASK 3: Exploratory Data Analysis
+# Exploratory Data Analysis
 
-# 3.1 Descriptive Statistics with NumPy:
+# Descriptive Statistics with NumPy:
 sales_from_df = df["Sales"].to_numpy()
 profit_from_df = df["Profit"].to_numpy()
 
@@ -257,8 +255,6 @@ for name, data in [("Sales", sales_from_df), ("Profit", profit_from_df)]:
         skew = "Symmetric"
 
     print(f"Distribution: {skew}")
-
-# 3.2 Grouped Analysis:
 
 # Total Sales, Total Profit, and Average Discount by Category:
 category_summary = df.groupby("Category").agg({
@@ -305,7 +301,6 @@ monthly_sales = df.groupby("Year_Month")["Sales"].sum()
 
 print(monthly_sales)
 
-# 3.3 Correlation Analysis:
 correlation_matrix = df[["Sales", "Quantity", "Discount", "Profit"]].corr()
 
 print("\nCorrelation Matrix:\n")
@@ -349,7 +344,6 @@ plt.savefig("assets/correlation_heatmap.png", dpi=150, bbox_inches="tight")
 
 print("Saved: assets/correlation_heatmap.png")
 
-# 3.4 Profitability Investigation:
 
 # Filter and display all transactions where Profit < 0 (losses):
 loss_transactions = df[df["Profit"] < 0]
